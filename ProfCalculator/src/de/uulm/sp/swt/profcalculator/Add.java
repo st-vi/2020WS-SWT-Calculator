@@ -1,9 +1,8 @@
 package de.uulm.sp.swt.profcalculator;
 
-public class Add {
+// TODO rename class Add into Addition
+public class Add extends Expression {
 	
-	public Value l, r;
-
 	public Add(Value l, Value r) {
 		this.l = l;
 		this.r = r;
@@ -16,8 +15,5 @@ public class Add {
 	public int evaluate() {
 		return l.getValue() + r.getValue();
 	}
-
-	public String computeEquation() {
-		return toString() + " = " + evaluate();
-	}
+	
 }
