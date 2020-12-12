@@ -2,9 +2,8 @@ package de.uulm.sp.swt.profcalculator;
 
 public abstract class Expression {
 
-	// TODO rename l and r to left and right
-	public Value l;
-	public Value r;
+	public Value left;
+	public Value right;
 
 	public abstract int evaluate();
 
