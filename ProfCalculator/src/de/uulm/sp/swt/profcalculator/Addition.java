@@ -2,6 +2,9 @@ package de.uulm.sp.swt.profcalculator;
 
 public class Addition extends Expression {
 	
+	public Value left;
+	public Value right;
+
 	public Addition(Value left, Value right) {
 		this.left = left;
 		this.right = right;
