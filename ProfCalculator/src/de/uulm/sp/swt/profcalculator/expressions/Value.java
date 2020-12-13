@@ -8,7 +8,7 @@ public class Value extends Expression {
 		this.value = value;
 	}
 
-	public String toString() {
+	public String toString(Expression parent) {
 		return value.toString();
 	}
 

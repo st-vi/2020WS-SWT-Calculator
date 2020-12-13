@@ -3,6 +3,7 @@ package de.uulm.sp.swt.profcalculator;
 import de.uulm.sp.swt.profcalculator.expressions.Addition;
 import de.uulm.sp.swt.profcalculator.expressions.Expression;
 import de.uulm.sp.swt.profcalculator.expressions.Multiplication;
+import de.uulm.sp.swt.profcalculator.expressions.NecessaryBrackets;
 import de.uulm.sp.swt.profcalculator.expressions.Value;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -57,6 +58,7 @@ public class ProfCalculator	extends Application implements EventHandler<ActionEv
 			else if (event.getSource() == multiplicationButton) {
 				expression = new Multiplication(expression, new Value(newValue));
 			}
+			expression = new NecessaryBrackets(expression);
 			updateGUI();
 			inputField.requestFocus();
 		} catch (NumberFormatException e) {
