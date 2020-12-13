@@ -54,9 +54,11 @@ public class ProfCalculator	extends Application implements EventHandler<ActionEv
 			int newValue = Integer.parseInt(inputField.getText());
 			if (event.getSource() == additionButton) {
 				expression = new Addition(expression, new Value(newValue));
+				Logger.getLogger().log("+ " + newValue);
 			}
 			else if (event.getSource() == multiplicationButton) {
 				expression = new Multiplication(expression, new Value(newValue));
+				Logger.getLogger().log("* " + newValue);
 			}
 			expression = new NecessaryBrackets(expression);
 			updateGUI();
