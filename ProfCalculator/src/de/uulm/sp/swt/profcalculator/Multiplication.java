@@ -2,20 +2,20 @@ package de.uulm.sp.swt.profcalculator;
 
 public class Multiplication extends Expression {
 
-	public Value left;
-	public Value right;
+	public Expression left;
+	public Expression right;
 
-	public Multiplication(Value left, Value right) {
+	public Multiplication(Expression left, Expression right) {
 		this.left = left;
 		this.right = right;
 	}
 
 	public String toString() {
-		return left.toString() + " * " + right.toString();
+		return "(" + left.toString() + " * " + right.toString() + ")";
 	}
 
 	public int evaluate() {
-		return left.getValue() * right.getValue();
+		return left.evaluate() * right.evaluate();
 	}
 	
 }
