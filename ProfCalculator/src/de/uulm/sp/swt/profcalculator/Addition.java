@@ -2,10 +2,10 @@ package de.uulm.sp.swt.profcalculator;
 
 public class Addition extends Expression {
 	
-	public Value left;
-	public Value right;
+	public Expression left;
+	public Expression right;
 
-	public Addition(Value left, Value right) {
+	public Addition(Expression left, Expression right) {
 		this.left = left;
 		this.right = right;
 	}
@@ -15,7 +15,7 @@ public class Addition extends Expression {
 	}
 
 	public int evaluate() {
-		return left.getValue() + right.getValue();
+		return left.evaluate() + right.evaluate();
 	}
 	
 }

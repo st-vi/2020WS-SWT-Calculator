@@ -1,6 +1,6 @@
 package de.uulm.sp.swt.profcalculator;
 
-public class Value {
+public class Value extends Expression {
 
 	Integer value;
 
@@ -12,7 +12,9 @@ public class Value {
 		return value.toString();
 	}
 
-	public int getValue() {
+	@Override
+	public int evaluate() {
 		return value.intValue();
 	}
+
 }

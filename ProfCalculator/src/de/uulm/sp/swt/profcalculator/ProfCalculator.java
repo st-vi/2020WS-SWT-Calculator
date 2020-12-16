@@ -16,7 +16,7 @@ public class ProfCalculator	extends Application implements EventHandler<ActionEv
 
 	private final static Value DEFAULT_VALUE = new Value(0);
 
-	private Expression expression = new Addition(DEFAULT_VALUE, DEFAULT_VALUE);
+	private Expression expression = DEFAULT_VALUE;
 
 	private Label errorLabel = new Label();
 
@@ -47,12 +47,11 @@ public class ProfCalculator	extends Application implements EventHandler<ActionEv
 	public void handle(ActionEvent event) {
 		try {
 			int newValue = Integer.parseInt(inputField.getText());
-			int oldResult = expression.evaluate();
 			if (event.getSource() == additionButton) {
-				expression = new Addition(new Value(oldResult), new Value(newValue));
+				expression = new Addition(expression, new Value(newValue));
 			}
 			else if (event.getSource() == multiplicationButton) {
-				expression = new Multiplication(new Value(oldResult), new Value(newValue));
+				expression = new Multiplication(expression, new Value(newValue));
 			}
 			updateGUI();
 			inputField.requestFocus();
