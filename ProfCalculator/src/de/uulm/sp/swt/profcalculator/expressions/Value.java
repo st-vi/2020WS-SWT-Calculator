@@ -1,4 +1,4 @@
-package de.uulm.sp.swt.profcalculator;
+package de.uulm.sp.swt.profcalculator.expressions;
 
 public class Value extends Expression {
 
