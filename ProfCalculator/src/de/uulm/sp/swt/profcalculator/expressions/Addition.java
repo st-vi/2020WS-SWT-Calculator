@@ -10,8 +10,8 @@ public class Addition extends Expression {
 		this.right = right;
 	}
 
-	public String toString() {
-		return left.toString() + " + " + right.toString();
+	public String toString(Expression parent) {
+		return left.toString(this) + " + " + right.toString(this);
 	}
 
 	public int evaluate() {
