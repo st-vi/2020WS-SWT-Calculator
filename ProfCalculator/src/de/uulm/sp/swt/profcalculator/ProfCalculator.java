@@ -5,6 +5,8 @@ import de.uulm.sp.swt.profcalculator.expressions.Expression;
 import de.uulm.sp.swt.profcalculator.expressions.Multiplication;
 import de.uulm.sp.swt.profcalculator.expressions.NecessaryBrackets;
 import de.uulm.sp.swt.profcalculator.expressions.Value;
+import de.uulm.sp.swt.profcalculator.gui.BlueFontGUIFactory;
+import de.uulm.sp.swt.profcalculator.gui.GUIFactory;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -22,15 +24,17 @@ public class ProfCalculator	extends Application implements EventHandler<ActionEv
 	private final static Value DEFAULT_VALUE = new Value(0);
 
 	private Expression expression = DEFAULT_VALUE;
+	
+	private GUIFactory guiFactory = new BlueFontGUIFactory();
 
-	private Label errorLabel = new Label();
+	private Label errorLabel = guiFactory.createLabel();
 
 	private TextField inputField = new TextField();
 
-	private Button additionButton = new Button("+");
-	private Button multiplicationButton = new Button("*");
+	private Button additionButton = guiFactory.createButton("+");
+	private Button multiplicationButton = guiFactory.createButton("*");
 
-	private Label resultLabel = new Label();
+	private Label resultLabel = guiFactory.createLabel();
 
 	@Override
 	public void start(Stage stage) throws Exception {
